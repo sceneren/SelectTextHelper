@@ -8,10 +8,10 @@ android {
 
     defaultConfig {
         applicationId "com.xiaoguang.selecttextview"
-        minSdk 14
+        minSdk 21
         targetSdk 33
         versionCode 1
-        versionName "1.0.1"
+        versionName "$lib_version"
     }
 
     buildTypes {

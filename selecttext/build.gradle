@@ -7,15 +7,8 @@ plugins {
 android {
     compileSdk 33
 
-    publishing{
-        sinleVariant("release"){
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
-
     defaultConfig {
-        minSdk 14
+        minSdk 21
     }
 
     compileOptions {
@@ -42,14 +35,27 @@ task androidSourcesJar(type: Jar) {
 }
 
 afterEvaluate{
-    publishing{
-        publications{
-            release(MavenPublication){
-                from components.release
-                groupId = 'com.github.sceneren'
-                artifactId = 'SelectTextHelper'
-                version = '1.0.2'
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release       //如果这里报错，先注释，构建Gradle结束在解除
+                groupId = 'com.gitee.sceneren' //自定义组id
+                artifactId = 'SelectTextHelper'       //自定义库名
+                version = "$lib_version"  //自定义版号
             }
         }
     }
+    repositories {
+        maven {
+            url"$buildDir/repo"
+        }
+    }
+}
+
+//在 Terminal 控制台使用，可以检查是否通过验证
+//./gradlew clean build publish
+//创建资源库
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
 }
