@@ -2,10 +2,9 @@
 buildscript {
     ext.kotlin_version = '1.8.0'
     repositories {
-        maven {
-            url 'http://172.16.3.249:8081/repository/maven-public/'
-            allowInsecureProtocol = true
-        }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.4.2"
@@ -19,9 +18,8 @@ task clean(type: Delete) {
 
 allprojects {
     repositories {
-        maven {
-            url 'http://172.16.3.249:8081/repository/maven-public/'
-            allowInsecureProtocol = true
-        }
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
