@@ -1,14 +1,10 @@
 plugins {
     id 'com.android.library'
-    // 1. 【必加】 启用 android-maven 插件
-    id 'com.github.dcendents.android-maven'
     id 'kotlin-android'
 }
-// 2. 【必加】 关联Github地址, 格式为 com.github.(用户名)
-group = 'com.github.ITxiaoguang'
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         minSdk 14
@@ -26,5 +22,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 }

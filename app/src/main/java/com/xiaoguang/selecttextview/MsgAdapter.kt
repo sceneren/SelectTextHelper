@@ -126,49 +126,49 @@ class MsgAdapter(private val mContext: Context, private val mList: List<MsgBean>
         msgPop.addItem(
             R.drawable.ic_msg_copy,
             R.string.copy,
-            object : CustomPop.onSeparateItemClickListener {
+            object : CustomPop.OnSeparateItemClickListener {
                 override fun onClick() {
                     copy(null, msgBean.content)
                 }
             })
         msgPop.addItem(R.drawable.ic_msg_rollback,
             R.string.rollback,
-            object : CustomPop.onSeparateItemClickListener {
+            object : CustomPop.OnSeparateItemClickListener {
                 override fun onClick() {
                     toast(R.string.rollback)
                 }
             })
         msgPop.addItem(R.drawable.ic_msg_forward,
             R.string.forward,
-            object : CustomPop.onSeparateItemClickListener {
+            object : CustomPop.OnSeparateItemClickListener {
                 override fun onClick() {
                     toast(R.string.forward)
                 }
             })
         msgPop.addItem(R.drawable.ic_msg_collect,
             R.string.collect,
-            object : CustomPop.onSeparateItemClickListener {
+            object : CustomPop.OnSeparateItemClickListener {
                 override fun onClick() {
                     toast(R.string.collect)
                 }
             })
         msgPop.addItem(R.drawable.ic_msg_select,
             R.string.select,
-            object : CustomPop.onSeparateItemClickListener {
+            object : CustomPop.OnSeparateItemClickListener {
                 override fun onClick() {
                     toast(R.string.select)
                 }
             })
         msgPop.addItem(R.drawable.ic_msg_quote,
             R.string.quote,
-            object : CustomPop.onSeparateItemClickListener {
+            object : CustomPop.OnSeparateItemClickListener {
                 override fun onClick() {
                     toast(R.string.quote)
                 }
             })
         msgPop.addItem(R.drawable.ic_msg_delete,
             R.string.delete,
-            object : CustomPop.onSeparateItemClickListener {
+            object : CustomPop.OnSeparateItemClickListener {
                 override fun onClick() {
                     toast(R.string.delete)
                 }
@@ -397,49 +397,49 @@ class MsgAdapter(private val mContext: Context, private val mList: List<MsgBean>
             val msgPop = CustomPop(mContext, targetView, isText)
             msgPop.addItem(R.drawable.ic_msg_copy,
                 R.string.copy,
-                object : CustomPop.onSeparateItemClickListener {
+                object : CustomPop.OnSeparateItemClickListener {
                     override fun onClick() {
                         copy(mSelectableTextHelper, selectedText)
                     }
                 })
             msgPop.addItem(R.drawable.ic_msg_rollback,
                 R.string.rollback,
-                object : CustomPop.onSeparateItemClickListener {
+                object : CustomPop.OnSeparateItemClickListener {
                     override fun onClick() {
                         toast(R.string.rollback)
                     }
                 })
             msgPop.addItem(R.drawable.ic_msg_forward,
                 R.string.forward,
-                object : CustomPop.onSeparateItemClickListener {
+                object : CustomPop.OnSeparateItemClickListener {
                     override fun onClick() {
                         toast(R.string.forward)
                     }
                 })
             msgPop.addItem(R.drawable.ic_msg_collect,
                 R.string.collect,
-                object : CustomPop.onSeparateItemClickListener {
+                object : CustomPop.OnSeparateItemClickListener {
                     override fun onClick() {
                         toast(R.string.collect)
                     }
                 })
             msgPop.addItem(R.drawable.ic_msg_select,
                 R.string.select,
-                object : CustomPop.onSeparateItemClickListener {
+                object : CustomPop.OnSeparateItemClickListener {
                     override fun onClick() {
                         toast(R.string.select)
                     }
                 })
             msgPop.addItem(R.drawable.ic_msg_quote,
                 R.string.quote,
-                object : CustomPop.onSeparateItemClickListener {
+                object : CustomPop.OnSeparateItemClickListener {
                     override fun onClick() {
                         toast(R.string.quote)
                     }
                 })
             msgPop.addItem(R.drawable.ic_msg_delete,
                 R.string.delete,
-                object : CustomPop.onSeparateItemClickListener {
+                object : CustomPop.OnSeparateItemClickListener {
                     override fun onClick() {
                         toast(R.string.delete)
                     }

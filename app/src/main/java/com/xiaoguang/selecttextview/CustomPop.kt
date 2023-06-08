@@ -34,7 +34,7 @@ class CustomPop(
     private var iv_arrow_up: ImageView? = null
     private var iv_arrow: ImageView? = null
     private val itemTextList: MutableList<Pair<Int, String>>? = LinkedList()
-    private val itemListenerList: MutableList<onSeparateItemClickListener> = LinkedList()
+    private val itemListenerList: MutableList<OnSeparateItemClickListener> = LinkedList()
     private var listAdapter: SelectTextPopAdapter? = null
     private var popupWindow: PopupWindow? = null
     private var mWidth = 0  // 本pop的宽
@@ -46,7 +46,7 @@ class CustomPop(
     fun addItem(
         @DrawableRes drawableId: Int,
         @StringRes textResId: Int,
-        listener: onSeparateItemClickListener
+        listener: OnSeparateItemClickListener
     ) {
         addItem(drawableId, context.getString(textResId), listener)
     }
@@ -57,7 +57,7 @@ class CustomPop(
     fun addItem(
         @DrawableRes drawableId: Int,
         itemText: String,
-        listener: onSeparateItemClickListener
+        listener: OnSeparateItemClickListener
     ) {
         itemTextList!!.add(Pair(drawableId, itemText))
         itemListenerList.add(listener)
@@ -66,14 +66,14 @@ class CustomPop(
     /**
      * 只有文字
      */
-    fun addItem(itemText: String, listener: onSeparateItemClickListener) {
+    fun addItem(itemText: String, listener: OnSeparateItemClickListener) {
         addItem(0, itemText, listener)
     }
 
     /**
      * 只有文字
      */
-    fun addItem(@StringRes textResId: Int, listener: onSeparateItemClickListener) {
+    fun addItem(@StringRes textResId: Int, listener: OnSeparateItemClickListener) {
         addItem(context.getString(textResId), listener)
     }
 
@@ -104,7 +104,7 @@ class CustomPop(
         updateListView()
     }
 
-    interface onSeparateItemClickListener {
+    interface OnSeparateItemClickListener {
         fun onClick()
     }
 
