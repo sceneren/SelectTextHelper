@@ -7,6 +7,13 @@ plugins {
 android {
     compileSdk 33
 
+    publishing{
+        sinleVariant("release"){
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
     defaultConfig {
         minSdk 14
     }
@@ -36,11 +43,12 @@ task androidSourcesJar(type: Jar) {
 
 afterEvaluate{
     publishing{
-        def versionName = "1.0.1"
         publications{
             release(MavenPublication){
-                artifactId = "SelectTextHelper"
-                version = versionName
+                from components.release
+                groupId = 'com.github.sceneren'
+                artifactId = 'SelectTextHelper'
+                version = '1.0.2'
             }
         }
     }
